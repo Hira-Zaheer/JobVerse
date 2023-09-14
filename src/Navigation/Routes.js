@@ -1,18 +1,19 @@
-import { View, Text, Platform ,Image } from "react-native";
+import { Image } from "react-native";
 import * as React from "react";
 import { NavigationContainer } from "@react-navigation/native";
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import 'react-native-gesture-handler';
+import { createDrawerNavigator } from '@react-navigation/drawer';
 import Home from "./Home";
 import signup from "./signup";
 import Login from "./Login";
 
-const Stack = createNativeStackNavigator();
+const Drawer = createDrawerNavigator();
 
 function LogoTitle() {
   return (
     <Image
       style={{ width: 120, height: 30 }}
-      source={require('./compnents/ww.png')}
+      source={require('./compnents/4-wo.png')}
     />
   );
 }
@@ -22,19 +23,21 @@ function LogoTitle() {
 export default function Routes() {
   return (
     <NavigationContainer>
-      <Stack.Navigator
-        screenOptions={{
-          headerTintColor:"white",
+      <Drawer.Navigator screenOptions={{ headerTitle: (props) => <LogoTitle {...props} />, headerTintColor:"black",
           headerTitleAlign:"center",
-          // headerBackVisible:false,
-          
-          headerStyle: { backgroundColor: "#84cc16" }
-        }} 
-      >
-      <Stack.Screen name="Home" component={Home} options={{ headerTitle: (props) => <LogoTitle {...props} /> }} /> 
-             <Stack.Screen name="signup" component={signup} options={{ headerTitle: (props) => <LogoTitle {...props} /> }} />
-        <Stack.Screen name="Login" component={Login}  options={{ headerTitle: (props) => <LogoTitle {...props} /> }}/>
-      </Stack.Navigator>
+          headerStyle: { backgroundColor: "#84cc16" },
+          drawerActiveBackgroundColor:"#84cc16",drawerActiveTintColor:"black"}}>
+
+      <Drawer.Screen name="Home" component={Home} options={{ headerTitle: (props) => <LogoTitle {...props} />, headerTintColor:"white",
+          headerTitleAlign:"center",
+          headerStyle: { backgroundColor: "#84cc16" } }} />
+      <Drawer.Screen name="Signup" component={signup} />
+      <Drawer.Screen name="Login" component={Login} />
+    </Drawer.Navigator>
+
     </NavigationContainer>
+   
+
+
   );
 }
