@@ -49,7 +49,7 @@ const styles = StyleSheet.create({
       flex: 2,
       justifyContent: 'center',
       alignItems: 'center',
-      paddingTop:20
+      paddingTop:30
   },
   footer: {
       flex: 1,
@@ -61,6 +61,8 @@ const styles = StyleSheet.create({
   logo: {
     width: height_logo,
       height: height_logo,
+      marginBottom:20,
+      overflow:"visible",
       shadowColor:"#333333",
       shadowOffset:{width:5,height:6},
       shadowOpacity:0.6,
