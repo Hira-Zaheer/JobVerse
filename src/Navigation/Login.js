@@ -36,6 +36,9 @@ export default function Login() {
   )
 }
 
+const {height} = Dimensions.get("screen");
+const height_logo = height * 0.28;
+
 
 const styles = StyleSheet.create({
   container: {
@@ -56,6 +59,8 @@ const styles = StyleSheet.create({
       paddingHorizontal: 30
   },
   logo: {
+    width: height_logo,
+      height: height_logo,
       shadowColor:"#333333",
       shadowOffset:{width:5,height:6},
       shadowOpacity:0.6,
