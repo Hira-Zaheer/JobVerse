@@ -4,19 +4,21 @@ import {
   TouchableOpacity, 
   Dimensions,
   StyleSheet,
-  StatusBar,
+  Button,
   SafeAreaView,
   ScrollView,
   Image
 } from 'react-native';
-import React from 'react'
-import { useNavigation } from '@react-navigation/native'
+import React from 'react';
+import { useNavigation } from '@react-navigation/native';
 
 export default function signup() {
+
   const navigation = useNavigation();
+
    return (
     <SafeAreaView style={styles.container}>
-    <ScrollView style={{backgroundColor:"#fff"}}>
+    <ScrollView style={{backgroundColor:"#84cc16"}}>
      <View style={styles.container }>
     <View style={styles.header}>
     < Image source={require("./compnents/signup-image.png")} style={styles.logo} />
@@ -28,8 +30,9 @@ export default function signup() {
     
 
 
-{/* <Button title="Go To login page"  onPress={()=> navigation.replace('Login')} >    
+{/* <Button title="Go To login page"  onPress={()=> navigation.navigate('Login')} >    
     </Button> */}
+
     </View>
     </ScrollView>
     </SafeAreaView>
@@ -43,7 +46,7 @@ const height_logo = height * 0.30;
 const styles = StyleSheet.create({
   container: {
     flex: 1, 
-    backgroundColor: '#84cc16'
+    backgroundColor: '#fff'
   },
   header: {
       flex: 2,
@@ -54,7 +57,7 @@ const styles = StyleSheet.create({
   },
   footer: {
       flex: 1,
-      backgroundColor: '#fff',
+      backgroundColor: '#84cc16',
       borderTopLeftRadius: 30,
       borderTopRightRadius: 30,
       paddingHorizontal: 30

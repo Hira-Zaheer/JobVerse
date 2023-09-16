@@ -4,7 +4,7 @@ import {
   TouchableOpacity, 
   Dimensions,
   StyleSheet,
-  StatusBar,
+ Button,
   SafeAreaView,
   ScrollView,
   Image
@@ -28,8 +28,8 @@ export default function Login() {
     </View>
     </View>
     </ScrollView>
-{/* <Button title="Go To login page"  onPress={()=> navigation.replace('Login')} >    
-    </Button> */}
+<Button title="Go To login page"  onPress={()=> navigation.navigate('Home')} >    
+    </Button>
     </SafeAreaView>
    
    
